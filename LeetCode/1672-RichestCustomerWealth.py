@@ -8,15 +8,17 @@ for i in range(1, customer_count+1):
         wealth = int(input(f"Enter Wealth in Bank {j} for Customer {i}: "))
         customer_account.append(wealth)
     accounts.append(customer_account)
-print(accounts)
 
 # Function to Calculate Max Wealth of Customer
 def maximumWealth(accounts):
     maxWealth = 0
+    maxWealthIndex = -1
     # Iterate over Every Customer
-    for customer in accounts:
-        wealth = sum(customer)
+    for customer in range(len(accounts)):
+        wealth = sum(accounts[customer])
         maxWealth = max(maxWealth, wealth)
-    return maxWealth
+        maxWealthIndex = customer
+    return maxWealth, maxWealthIndex
+maxWealth, maxWealthIndex = maximumWealth(accounts)
 
-print(maximumWealth(accounts))
+print(f"Customer {maxWealthIndex+1} has MaxWealth of: {maxWealth}")

@@ -40,7 +40,8 @@ While the primary language for code examples and solutions will be **Python**, t
 ## Pesronal Notes on Notion
 
 As part of my comprehensive approach to mastering Data Structures and Algorithms, I maintain a detailed collection of personal notes. These notes are an extension of the learning and exploration that takes place within this repository. They include additional insights, explanations, and reflections on the concepts and problems I encounter throughout my DSA journey.
-You can access my personal DSA notes here: [Data Structures & Algorithms Notes on Notion](https://shreytrivedi577.notion.site/Data-Structures-Algorithms-057f78e59b674e8380168608dd0e52e0).
+You can access my personal DSA notes here: 
+[Data Structures & Algorithms Notes on Notion](https://shreytrivedi577.notion.site/Data-Structures-Algorithms-057f78e59b674e8380168608dd0e52e0).
 
 ## Contributing
 

@@ -29,11 +29,11 @@ class SinglyLL:
         current_node = self.head
         while current_node:
             if current_node.item == target:
+                print(f"Inserting {item} after Target {target}")
                 new_node.next = current_node.next
                 current_node.next = new_node
                 return
             current_node = current_node.next
-            print(f"Inserting {item} after Target {target}")
         print(f"Target Node {target} not Found ! Cannot insert {item}")
         
 
@@ -57,6 +57,18 @@ class SinglyLL:
     #         current_node = self.head
     #         print(f"Inserting {item} before Target {target}")
     #     print(f"Target Node {target} not Found ! Cannot insert {item}")
+        
+
+    # Function to Search a Node
+    def search(self, item):
+        target = item
+        current_node = self.head
+        while current_node:
+            if current_node.item == target:
+                print(f"{item} Present in LinkedList")
+                return
+            current_node = current_node.next
+        print(f"{item} Not Found")
 
 
     # Function to Display LL with Nodes
@@ -74,6 +86,7 @@ sll.append(4)
 sll.append(6)
 sll.prepend(1)
 sll.prepend(0)
-sll.insertAfter(7, 5)
+sll.insertAfter(4, 5)
+sll.search(4)
 sll.displaySLL()
 

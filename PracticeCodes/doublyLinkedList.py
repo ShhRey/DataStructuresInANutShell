@@ -52,6 +52,19 @@ class DoublyLL:
         self.head = new_node
         print(f"Prepending {item} before Head")
 
+    
+    # Function to Search a Node
+    def search(self, item):
+        target = item
+        current_node = self.head
+        while current_node:
+            if current_node.item == target:
+                print(f"{item} Present in LinkedList")
+                return
+            current_node = current_node.next
+        print(f"{item} Not Found")
+    
+
     # Function to Print DLL
     def displayDLL(self):
         current_node = self.head

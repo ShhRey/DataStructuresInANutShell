@@ -1,7 +1,7 @@
 class Queue:
-    def __init__(self, max_size):
+    def __init__(self):
         self.queue = []
-        self.max_size = max_size
+        self.max_size = int(input("Enter Max Limit for Queue: "))
        
     # Function for Pushing Element into the Queue
     def enqueue(self, item):
@@ -32,7 +32,7 @@ class Queue:
     
     # Function for checking if Queue is Full or Not
     def is_full(self):
-        if len(self.queue) > self.max_size:
+        if len(self.queue) >= self.max_size:
             print(f"Queue is Full after inserting {self.max_size} items !")
         else:
             space = self.max_size - len(self.queue)
@@ -45,7 +45,7 @@ class Queue:
         return len(self.queue)
         
 
-queue = Queue(5)
+queue = Queue()
 queue.is_empty()
 queue.enqueue('1')
 queue.enqueue('2')

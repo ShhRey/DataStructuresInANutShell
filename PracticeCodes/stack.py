@@ -1,7 +1,7 @@
 class Stack:
-    def __init__(self, max_size):
+    def __init__(self):
         self.stack = []
-        self.max_size = max_size
+        self.max_size = int(input("Enter Max Limit for Stack: "))
 
 
     # Function for Pushing Element into the Stack
@@ -39,7 +39,7 @@ class Stack:
 
     # Function to check if Stack is Full or Not
     def is_full(self):
-        if len(self.stack) > self.max_size:
+        if len(self.stack) >= self.max_size:
             print(f"Stack is Full after inserting {self.max_size} items !")
         else:
             space = self.max_size - len(self.stack)
@@ -51,7 +51,7 @@ class Stack:
         return len(self.stack)
 
 
-stack = Stack(2)
+stack = Stack()
 stack.pop()
 stack.push('apple')
 stack.push('banana')

@@ -50,7 +50,3 @@ This repository is primarily for my personal learning and academic submission. H
 ## Disclaimer
 
 The contents of this repository are meant for educational purposes as part of my academic coursework in Data Structures and Algorithms. It is not intended for commercial use or as a definitive guide on DSA topics.
-
-## License
-
-This project is open-sourced under the MIT License. See the LICENSE file for more details.

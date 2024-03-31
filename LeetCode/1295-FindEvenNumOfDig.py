@@ -1,6 +1,10 @@
-nums = [12,-345,2,-6,7896]
-count = 0
+nums_length = int(input("Enter the Total Number of Elements: "))
+nums = []
 
+for i in range(1, nums_length+1):
+    nums.append(int(input(f"Enter {i} Element: ")))
+
+count = 0
 for num in nums:
     # Ignore numbers less than 0
     if num > 0:

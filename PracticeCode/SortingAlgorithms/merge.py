@@ -19,21 +19,23 @@ def MergeSort(arr):
         while (i < len(left_arr)) and (j < len(right_arr)):
             if left_arr[i] < right_arr[j]:
                 arr[k] = left_arr[i]
-                i = i+1
+                i += 1
             else:
                 arr[k] = right_arr[j]
-                j = j+1
-            k = k+1
+                j += 1
+            k += 1
+
         # Check for Remaining Elements in LA
         while i < len(left_arr):
             arr[k] = left_arr[i]
-            i = i+1
-            k = k+1        
+            i += 1
+            k += 1  
+                  
         # Check for Remaining Elements in RA
         while j < len(right_arr):
             arr[k] = right_arr[j]
-            j = j+1
-            k = k+1
+            j += 1
+            k += 1
     return arr
 
 print(MergeSort(elements))

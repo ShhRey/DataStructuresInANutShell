@@ -492,3 +492,175 @@ if ll.Cycle():
 else:
     print("No Cycle")
 '''
+
+# Question 11: Swap Nodes in Pair
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+    
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+    
+    def swapPair(self):
+        dummy = Node(0)
+        prev = dummy
+        dummy.next = self.head
+        current = self.head
+        while current and current.next:
+            first = current
+            second = current.next
+
+            prev.next = second
+            first.next = second.next
+            second.next = first
+
+            prev = first
+            current = first.next
+        self.head = dummy.next
+    
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end="->")
+            current = current.next
+        print("None")
+
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+ll.append(4)
+ll.display()
+ll.swapPair()
+ll.display()
+'''
+
+# Question 12: Rotate Nodes by k to the Right
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def rotateNodes(self, k):
+        if (self.head is None) or (k == 0):
+            return
+        current = self.head
+        length = 1
+        while current.next:
+            current = current.next
+            length += 1
+
+        k %= length
+        if k == 0:
+            return
+        
+        slow_ptr = self.head
+        fast_ptr = self.head
+        for _ in range(k):
+            fast_ptr = fast_ptr.next
+        while fast_ptr.next:
+            slow_ptr = slow_ptr.next
+            fast_ptr = fast_ptr.next
+        
+        new_head = slow_ptr.next
+        slow_ptr.next = None
+        current.next = self.head
+        self.head = new_head
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end="->")
+            current = current.next
+        print("None")
+
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+ll.append(4)
+ll.append(5)
+ll.display()
+ll.rotateNodes(2)
+ll.display()
+'''
+
+# Question 13: Remove Duplicates from Sorted List
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def remDup(self):
+        if self.head is None:
+            return self.head
+        current = self.head
+        while current and current.next:
+            if current.data == current.next.data:
+                current.next = current.next.next
+            else:
+                current = current.next
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end="->")
+            current = current.next
+        print("None")
+
+    
+ll = LinkedList()
+ll.append(1)
+ll.append(1)
+ll.append(2)
+ll.append(2)
+ll.append(3)
+ll.append(3)
+ll.append(4)
+ll.display()
+ll.remDup()
+ll.display()
+'''
